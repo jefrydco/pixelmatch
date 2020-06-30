@@ -1,6 +1,6 @@
 {
   "name": "pixelmatch",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "description": "The smallest and fastest pixel-level image comparison library.",
   "main": "dist/index.js",
   "bin": {
@@ -10,15 +10,16 @@
     "dist"
   ],
   "dependencies": {
-    "pngjs": "^3.4.0"
+    "pngjs": "^4.0.1"
   },
   "devDependencies": {
     "@types/pngjs": "^3.4.0",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
-    "eslint": "^6.4.0",
-    "tape": "^4.11.0",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.2",
+    "eslint": "^6.8.0",
+    "eslint-config-mourner": "^3.0.0",
+    "tape": "^4.13.2"
   },
   "scripts": {
     "pretest": "eslint lib/**/*.ts --fix",
