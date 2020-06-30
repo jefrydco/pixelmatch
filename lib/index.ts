@@ -26,6 +26,7 @@ export default class Pixelmatch {
    * @param arr 
    */
   private static _isPixelData(arr: Uint8Array): boolean {
+    // eslint-disable-next-line
     // @ts-ignore
     return ArrayBuffer.isView(arr) && arr.constructor.BYTES_PER_ELEMENT === 1;
   }
@@ -96,7 +97,7 @@ export default class Pixelmatch {
       for (let y = y0; y <= y2; y++) {
           if (x === x1 && y === y1) {
             continue
-          };
+          }
 
           const pos2 = (y * width + x) * 4;
           if (img[pos] === img[pos2] &&
@@ -104,11 +105,11 @@ export default class Pixelmatch {
               img[pos + 2] === img[pos2 + 2] &&
               img[pos + 3] === img[pos2 + 3]) {
             zeroes++
-          };
+          }
 
           if (zeroes > 2) {
             return true
-          };
+          }
       }
     }
 
@@ -159,7 +160,7 @@ export default class Pixelmatch {
     // brightness difference only
     if (yOnly) {
       return y
-    };
+    }
 
     const i = Pixelmatch._rgb2i(r1, g1, b1) - Pixelmatch._rgb2i(r2, g2, b2);
     const q = Pixelmatch._rgb2q(r1, g1, b1) - Pixelmatch._rgb2q(r2, g2, b2);
