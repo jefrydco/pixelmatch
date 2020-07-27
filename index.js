@@ -1,0 +1,2 @@
+import pixelmatch from './dist'
+

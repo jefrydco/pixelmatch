@@ -9,6 +9,7 @@ var Pixelmatch = /** @class */ (function () {
      * @param arr
      */
     Pixelmatch._isPixelData = function (arr) {
+        // eslint-disable-next-line
         // @ts-ignore
         return ArrayBuffer.isView(arr) && arr.constructor.BYTES_PER_ELEMENT === 1;
     };
@@ -73,7 +74,6 @@ var Pixelmatch = /** @class */ (function () {
                 if (x === x1 && y === y1) {
                     continue;
                 }
-                ;
                 var pos2 = (y * width + x) * 4;
                 if (img[pos] === img[pos2] &&
                     img[pos + 1] === img[pos2 + 1] &&
@@ -81,11 +81,9 @@ var Pixelmatch = /** @class */ (function () {
                     img[pos + 3] === img[pos2 + 3]) {
                     zeroes++;
                 }
-                ;
                 if (zeroes > 2) {
                     return true;
                 }
-                ;
             }
         }
         return false;
@@ -129,7 +127,6 @@ var Pixelmatch = /** @class */ (function () {
         if (yOnly) {
             return y;
         }
-        ;
         var i = Pixelmatch._rgb2i(r1, g1, b1) - Pixelmatch._rgb2i(r2, g2, b2);
         var q = Pixelmatch._rgb2q(r1, g1, b1) - Pixelmatch._rgb2q(r2, g2, b2);
         return 0.5053 * y * y + 0.299 * i * i + 0.1957 * q * q;
